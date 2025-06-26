@@ -1,0 +1,113 @@
+:root {
+  --primary-dark: #1a2942;
+  --primary-medium: #2d3a54;
+  --accent-purple: #3b2b63;
+  --text-light: #e0e0e0;
+  --highlight: #8a65c9;
+  --danger: #d64045;
+  --danger-hover: #b73338;
+}
+/* Mantener estilos al hacer clic o enfocar */
+.header-button:active,
+.header-button:focus,
+.nav-link:active,
+.nav-link:focus,
+.nav-link.show {
+  background-color: var(--highlight) !important;
+  color: white !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+  transform: translateY(-2px) !important;
+  outline: none !important;
+  border: none !important;
+}
+
+
+/* Estilos generales para los encabezados */
+.header-top, .header-bottom {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--accent-purple) 50%, var(--primary-medium) 100%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-light);
+  letter-spacing: 0.5px;
+}
+
+.header-user {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Botón Cerrar Sesión */
+.logout-button {
+  background-color: var(--danger);
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logout-button:hover {
+  background-color: var(--danger-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.logout-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Botones de navegación */
+.header-button {
+  color: var(--text-light);
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 0 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover */
+.header-button:hover{
+  color: white;
+  background-color: var(--highlight);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Eliminar oscurecimiento al hacer clic */
+.header-button.nav-link:active {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: var(--text-light) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transform: none;
+}
+
+/* Eliminar borde de foco */
+.header-button.nav-link:focus{
+  outline: none;
+  box-shadow: none;
+}
+
+
+/* Iconos con luz */
+.header-top svg, .header-bottom svg {
+  transition: all 0.3s ease;
+}
+
+.header-top svg:hover, .header-bottom svg:hover {
+  transform: scale(1.1);
+}

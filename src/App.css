@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Agregar a tu archivo CSS */
+.custom-btn {
+  font-weight: 600;
+  padding: 12px 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-btn:hover {
+  background-color: #0056b3; /* Cambia el color de fondo al pasar el ratón */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Sombra más intensa en hover */
+  transform: translateY(-2px); /* Pequeño efecto de "elevar" el botón */
+}
+
+.custom-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(38, 143, 255, 0.5); /* Resalta el botón cuando tiene el foco */
+}
+
+body {
+  font-family: system-ui, Arial, sans-serif;
+  background-color: #261f3b;
+  color: #fffefe;
+}

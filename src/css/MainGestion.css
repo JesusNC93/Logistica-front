@@ -1,0 +1,61 @@
+.btn-green {
+  background-color: green;
+  color: white;
+  border: none;
+  font-weight: bold;
+}
+.btn-green:hover {
+  background-color: #006400;
+}
+
+.btn-red {
+  background-color: red;
+  color: white;
+  border: none;
+  font-weight: bold;
+}
+.btn-red:hover {
+  background-color: #8B0000;
+}
+
+.btn-habilitar {
+  background-color: green;
+  color: white;
+  border: none;
+  font-weight: bold;
+}
+
+.btn-habilitar:hover {
+  background-color: #006400; /* verde oscuro */
+}
+
+.btn-deshabilitar {
+  background-color: rgb(212, 25, 25);
+  color: white;
+  border: none;
+  font-weight: bold;
+}
+
+.btn-deshabilitar:hover {
+  background-color: #8B0000; /* rojo oscuro */
+}
+
+.btn-editar {
+  background-color: #dbeafe;         /* Azul claro */
+  color: #0d6efd;                    /* Azul Bootstrap */
+  font-weight: bold;
+  border: 2px solid #0d6efd;         /* Borde azul */
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.375rem 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.btn-editar:hover {
+  background-color: #aecbfa;         /* Azul más oscuro */
+  color: #084298;                    /* Azul más profundo para el texto */
+  border-color: #084298;             /* Borde también más oscuro */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+

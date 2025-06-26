@@ -1,0 +1,178 @@
+/* Fondo general oscuro para armonizar con las tarjetas */
+body {
+  background: linear-gradient(160deg, #1b1e2a, #2a233b);
+  color: var(--text-light);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+/* Contenedor general del componente */
+.agenda-container {
+  padding: 2rem;
+}
+
+/* Lista de agendas */
+.agenda-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: all 1s ease;
+  position: relative; /* Para posicionamiento de elementos hijos */
+}
+
+/* Tarjeta base */
+.agenda-card {
+  background: linear-gradient(135deg, var(--primary-dark), var(--accent-purple));
+  color: var(--text-light);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: relative;
+  transition:
+    opacity 1s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 1s cubic-bezier(0.4, 0, 0.2, 1),
+    max-height 1s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 1s cubic-bezier(0.4, 0, 0.2, 1),
+    margin 1s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  max-height: 110px;  /* Reduce la altura máxima */
+  transform-origin: top center;
+}
+
+/* Animación de deshabilitación */
+.agenda-card.animating {
+  opacity: 0;
+  transform: translateY(10px) scale(0.95);
+  max-height: 0;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: -0.5rem; /* Elimina el espacio entre tarjetas durante la animación */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Estilo cuando está deshabilitada pero visible */
+.agenda-card.no-disponible {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+/* Información en la tarjeta */
+.agenda-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.tag {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 3px 6px;  /* Reducido para que las etiquetas sean más pequeñas */
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.agenda-nota {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 6px;
+  border-radius: 8px;
+  font-size: 0.85rem;  /* Tamaño de fuente más pequeño */
+  color: var(--text-light);
+  text-align: left;
+  margin-top: 0.5rem;
+}
+
+/* Estilo para el botón de la deuda */
+.tag-button {
+  font-size: 0.85rem;
+  padding: 3px 8px;
+  margin-left: 4px;
+  background-color: var(--highlight, #6c63ff);
+  border: none;
+}
+
+/* Contenedor para el toggle */
+.toggle-btn-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* --------------------- SWITCH --------------------- */
+.custom-switch {
+  display: inline-block;
+  width: 40px;  /* Reducido el tamaño del switch */
+  height: 22px;  /* Reducido el tamaño del switch */
+  z-index: 10;
+}
+
+.custom-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: background-color 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;  /* Reducido el tamaño del círculo */
+  width: 18px;   /* Reducido el tamaño del círculo */
+  left: 4px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.4s;
+}
+
+.custom-switch input:checked + .slider {
+  background-color: var(--highlight);
+}
+
+.custom-switch input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+/* --------------------- SELECT --------------------- */
+.select-dark {
+  background: linear-gradient(135deg, #1a1a2e, #2e1f47);
+  color: var(--text-light);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 6px 40px 6px 12px; /* espacio a la derecha para la flecha */
+  font-size: 1rem;
+  appearance: none;
+  position: relative;
+  background-image: url("data:image/svg+xml,%3Csvg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 18px 18px;
+}
+
+/* El focus también estilizado */
+.select-dark:focus {
+  border-color: var(--highlight);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+/* Opcional: Colores en las opciones desplegadas (en Chrome y Firefox) */
+.select-dark option {
+  background-color: #2e1f47;
+  color: var(--text-light);
+}

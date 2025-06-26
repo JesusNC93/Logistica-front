@@ -1,0 +1,134 @@
+/* Fondo con animación de color */
+.login-wrapper {
+    background: linear-gradient(45deg, #0a2c56, #6a2b7f, #1d7e43);
+    background-size: 300% 300%;
+    animation: gradientBG 10s ease infinite;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.login-card {
+    position: relative;
+    background: linear-gradient(135deg, #1a2942 0%, #3b2b63 50%, #2d3a54 100%);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    z-index: 1;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.login-card:hover {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilo mejorado para el ícono de login */
+.login-icon {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #2d3a54, #3b2b63);
+    border-radius: 50%;
+    padding: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25), 
+                0 4px 10px rgba(0, 0, 0, 0.22);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    color: #f0f0f0; /* Color más brillante para el ícono */
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.login-icon:after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0) 80%
+    );
+    transform: rotate(30deg);
+    pointer-events: none;
+}
+
+.login-icon:hover {
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo para el título del login */
+.login-title {
+    color: #e0e0e0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-top: 50px;
+    animation: slideIn 1s ease-out;
+}
+
+/* Animación para el título */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Asegurando la alineación a la izquierda del label */
+.input-label {
+    color: #e0e0e0; /* Color claro que resalta */
+    font-weight: 500;
+    margin-bottom: 5px;
+    text-align: left !important; /* Alineado a la izquierda con mayor prioridad */
+}
+
+/* Asegurando que los campos tengan el mismo comportamiento */
+.input-field {
+    border-radius: 12px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    width: 100%; /* Asegura que el campo ocupe todo el espacio disponible */
+}
+
+
+.input-field:focus {
+    border-color: #6a2b7f;
+}
+
+/* Estilo para el botón de ingresar */
+.btn-submit {
+    background-color: #0a2c56;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #6a2b7f;
+    cursor: pointer;
+}
